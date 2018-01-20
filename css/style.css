@@ -1,0 +1,349 @@
+/* ------------------ Menu --------------------- */
+
+#menu {
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  display: block;
+  top: 0;
+}
+
+#menu span {
+  display: block;
+  text-align: center;
+}
+
+.very-small {
+  font-size: 12px;
+}
+
+/* ------------------ NavBar --------------------- */
+
+.navbar {
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar a {
+  display: block;
+  text-align: center;
+  padding: 2%;
+  text-decoration: none;
+  font-size: 17px;
+  display: inline-block;
+  text-align:center;
+}
+
+
+/* ----------------- Choose game -------------- */
+
+.main-h1 {
+  margin-top: 10%;
+  margin-bottom: 50%;
+}
+
+
+/* ----------------- Cool box to show games -------------- */
+
+.cool-box {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 1rem;
+  position: relative;
+  width: 200px;
+
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.cool-box h3 {
+  text-align: center;
+}
+
+.cool-box:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+/* ------------------ Base --------------------- */
+html {
+  background-color: #EDEDEE;
+}
+
+.hidden-text {
+	visibility: hidden;
+	position: absolute
+}
+
+
+body {
+  font-family: Monospace, serif !important;
+}
+
+body.no-scroll {
+	width: 100%;
+	height: 100%;
+	overflow: hidden
+}
+
+h1 {
+  color: #592765;
+}
+
+/* ------------------ Not mine ----------------- */
+/* Some modifications were made to make it more compatible */
+
+#output {
+  height: 300px;
+  max-width: 300px;
+  background: lightgray;
+  margin-bottom: 15px;
+}
+.output-container {
+  min-width: 330px;
+  padding-bottom: 35px !important;
+}
+.input-container {
+  min-width: 250px;
+  padding-bottom: 35px !important;
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+.gif-container {
+  display: flex;
+  justify-content: space-between;
+  min-width: 300px;
+}
+.container {
+  position: relative;
+}
+#containerA {
+  border: 4px solid #4ca64c;
+}
+#containerB {
+  border: 4px solid #b76fdb ;
+}
+#containerC {
+  border: 4px solid #ff5ab3;
+}
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #333;
+  color: white;
+  font-size: 12px;
+  padding: 16px 22px;
+}
+.body-container {
+  margin: 10%;
+}
+
+.white-box {
+  background: white;
+  padding: 2%;
+  border-radius: 7px;
+  margin: 20px;
+}
+.trainbtn-box {
+  margin-top: 35px;
+  height: 65px;
+}
+.purple-color {
+  color: #b76fdb;
+}
+.green-color {
+  color: #4ca64c;
+}
+.pink-color {
+  color: #ff5ab3;
+}
+.exampereset-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  width: 246px;
+}
+.center-text {
+  text-align: center;
+}
+
+/* All about 3D buttons */
+.train-button::before, .train-button::after {
+  position: absolute;
+  content: "";
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.train-button {
+  display: inline-block;
+  padding: 20px 60px;
+  color: white;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 16px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  white-space: pre;
+  border-radius: 0px;
+  border: none;
+  cursor: pointer;
+  margin-left: 128px;
+}
+.train-button::before {
+  bottom: -10px;
+  left: -5px;
+  -webkit-transform: skewX(-45deg);
+  transform: skewX(-45deg);
+}
+.train-button::after {
+  left: -10px;
+  bottom: -5px;
+  -webkit-transform: skewY(-45deg);
+  transform: skewY(-45deg);
+}
+.train-button:active {
+  margin-left: -6px;
+  margin-top: 6px;
+  margin-left: 128px;
+}
+.train-button:active::before {
+  bottom: -3px;
+  height: 3px;
+  left: -2px;
+}
+.train-button:active::after {
+  left: -3px;
+  width: 3px;
+  bottom: -2px;
+}
+#buttonA {
+  background-color: #4ca64c;
+}
+#buttonA::after {
+  background-color: #329932;
+}
+#buttonA::before {
+  background-color: #008000;
+}
+#buttonB {
+  background-color: #b76fdb;
+}
+#buttonB::after {
+  background-color: #a346d1;
+}
+#buttonB::before {
+  background-color: #9932cc;
+}
+#buttonC {
+  background-color: #ff5ab3;
+}
+#buttonC::after {
+  background-color: #ff2b9d;
+}
+#buttonC::before {
+  background-color: #ff1493;
+}
+/* End of 3D buttons */
+
+/* All about progress bar */
+.progress {
+  position:relative;
+  width: 246px;
+  height: 35px;
+  background: lightgray;
+}
+
+.progress .progress-bar {
+  height: 35px;
+  width: 0%;
+  display: inline-block;
+}
+
+#progress-barA {
+  background: #4ca64c;
+}
+
+#progress-barB {
+  background: #b76fdb;
+}
+
+#progress-barC {
+  background: #ff5ab3;
+}
+
+.progress .progress-text {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  color: white;
+  padding: 10px 20px;
+}
+/* End of progress bar */
+
+/* Responsiveness */
+* {
+  box-sizing: border-box;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+[class*="col-"] {
+  float: left;
+}
+
+/* For desktop: */
+.col-8 {
+  padding-left: 20%;
+  width: 80%;
+}
+
+/* For desktop: */
+.col-3 {width: 30%;}
+
+/* For desktop: */
+.col-2 {width: 20%;}
+
+/* For desktop: */
+.col-1 {width: 10%;}
+
+/* .col-10 {width: 100%;} */
+
+@media only screen and (max-width: 1024px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+      width: 100%;
+  }

@@ -6,8 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Teachable Machine Boilerplate</title>
 
+    <!-- build for KNN image classifier -->
     <script src="dist/build.js"></script>
+
+    <!-- games -->
+    <script src="js/games/snake.js"></script>
+    <script src="js/games/asteroids.js"></script>
+    <script src="js/games/tis.js"></script>
+
+    <!-- auxiliar files for dealing with the games -->
+    <script type="text/javascript" src="games.json"></script>
+    <script src="js/boilerplate.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Caveat:700|Poppins:400,500,600,700" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
 </head>
 <body>
+  <div id="menu" class="col-2">
+    <div id="video" class="center-container"></div>
+    <span class='very-small'>everything runs locally so there's no server
+                             consuming this data.</span>
+
+                             <span id="timer"></span>
+  </div>
+
+  <div class="body-container row col-8">
+    <div class="navbar">
+      <a href="#choose_game">Play</a>
+      <a href="#news">About</a>
+      <a href="#contact">Source</a>
+    </div>
+
+    <div>
+      <h1 class="center-text">Teachable games</h1>
+      <p class="center-text">This a simplified version of
+        <a href="https://teachablemachine.withgoogle.com">Teachable Machines</a>
+        modified so you can play games in a different way!</p>
+      <p class="center-text">This code is open source and can be accessed
+        <a href="todo">here</a>.
+      </p>
+
+      <!-- the buttons will be inserted here by boilerploat.js -->
+      <div id="choose_game" class='main-h1'>
+        <h1> Choose a game </h1>
+      </div>
+
+      <!--  -->
+      <div id="play_game" class='main-h1'>
+        <h1> Play game </h1>
+        <canvas id="screen" width="310" height="310"></canvas>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
