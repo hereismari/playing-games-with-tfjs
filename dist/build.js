@@ -24,8 +24,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // Number of classes to classify
-var NUM_CLASSES = 3;
-// Webcam Image size. Must be 227. 
+var NUM_CLASSES = 5;
+// Webcam Image size. Must be 227.
 var IMAGE_SIZE = 227;
 // K value for KNN
 var TOPK = 10;
@@ -41,8 +41,17 @@ var Main = function () {
     this.training = -1; // -1 when no class is being trained
     this.videoPlaying = false;
 
-    // Initiate deeplearn.js math and knn classifier objects
-    this.knn = new _deeplearnKnnImageClassifier.KNNImageClassifier(NUM_CLASSES, TOPK, _deeplearn.ENV.math);
+    this.lastTime = new Date();
+
+    this.code = {
+      0: { "key": "left", "code": 37, "symbol": "&larr;" },
+      1: { "key": "right", "code": 39, "symbol": "&rarr;" },
+      2: { "key": "up", "code": 38, "symbol": "&uarr;" },
+      3: { "key": "down", "code": 40, "symbol": "&darr;" },
+      4: { "key": "None", "code": null }
+
+      // Initiate deeplearn.js math and knn classifier objects
+    };this.knn = new _deeplearnKnnImageClassifier.KNNImageClassifier(NUM_CLASSES, TOPK, _deeplearn.ENV.math);
 
     // Create video element that will contain the webcam image
     this.video = document.createElement('video');
@@ -50,18 +59,21 @@ var Main = function () {
     this.video.setAttribute('playsinline', '');
 
     // Add video element to DOM
-    document.body.appendChild(this.video);
+    var divVideo = document.getElementById('video');
+    divVideo.appendChild(this.video);
 
-    // Create training buttons and info texts    
+    var menu = document.getElementById('menu');
+
+    // Create training buttons and info texts
 
     var _loop = function _loop(i) {
       var div = document.createElement('div');
-      document.body.appendChild(div);
+      menu.appendChild(div);
       div.style.marginBottom = '10px';
 
       // Create training button
       var button = document.createElement('button');
-      button.innerText = "Train " + i;
+      button.innerText = _this.code[i]['symbol'] + ' ' + _this.code[i]['key'];
       div.appendChild(button);
 
       // Listen for mouse events when clicking the button
@@ -79,9 +91,23 @@ var Main = function () {
       _this.infoTexts.push(infoText);
     };
 
-    for (var i = 0; i < NUM_CLASSES; i++) {
+    for (var i in this.code) {
       _loop(i);
     }
+
+    var div = document.createElement('div');
+    menu.appendChild(div);
+    div.style.marginBottom = '10px';
+
+    // Create training button
+    var button = document.createElement('button');
+    button.innerText = "Play";
+    div.appendChild(button);
+
+    // Listen for mouse events when clicking the button
+    button.addEventListener('mouseup', function () {
+      return window.dispatchEvent(new CustomEvent('play' + window.choosedGame, { detail: 1 }));
+    });
 
     // Setup webcam
     navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(function (stream) {
@@ -133,9 +159,11 @@ var Main = function () {
           this.knn.addImage(image, this.training);
         }
 
-        // If any examples have been added, run predict
+        // If any examples have been added and some time has passesd, run predict
         var exampleCount = this.knn.getClassExampleCount();
-        if (Math.max.apply(Math, _toConsumableArray(exampleCount)) > 0) {
+        if (new Date().getTime() - this.lastTime.getTime() >= 400 && Math.max.apply(Math, _toConsumableArray(exampleCount)) > 0) {
+          console.log(new Date().getTime() - this.lastTime.getTime());
+          this.lastTime = new Date();
           this.knn.predictClass(image).then(function (res) {
             for (var i = 0; i < NUM_CLASSES; i++) {
               // Make the predicted class bold
@@ -144,11 +172,33 @@ var Main = function () {
               } else {
                 _this2.infoTexts[i].style.fontWeight = 'normal';
               }
-
+              //console.log(res);
               // Update info text
               if (exampleCount[i] > 0) {
                 _this2.infoTexts[i].innerText = ' ' + exampleCount[i] + ' examples - ' + res.confidences[i] * 100 + '%';
               }
+            }
+
+            // Firing a native keyboard event is way harder than it should be,
+            // but we can fake it.
+            // http://stackoverflow.com/questions/961532/firing-a-keyboard-event-in-javascript
+
+            console.log(res.classIndex);
+            if (res.classIndex != 4) {
+              var e = document.createEvent('Event');
+
+              e.initEvent('keydown', true, true);
+              e.keyCode = _this2.code[res.classIndex]['code'];
+              document.dispatchEvent(e);
+
+              var x = function x(code) {
+                var e2 = document.createEvent('Event');
+                e2.initEvent('keyup', true, true);
+                e2.keyCode = code[res.classIndex]['code'];
+                document.dispatchEvent(e2);
+              };
+
+              setTimeout(x, 100, _this2.code);
             }
           })
           // Dispose image when done
@@ -159,6 +209,7 @@ var Main = function () {
           image.dispose();
         }
       }
+
       this.timer = requestAnimationFrame(this.animate.bind(this));
     }
   }]);

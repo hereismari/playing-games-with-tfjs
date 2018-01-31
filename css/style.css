@@ -1,7 +1,7 @@
 /* ------------------ Menu --------------------- */
 
 #menu {
-  background-color: white;
+  background-color: #ccccec;
   position: fixed;
   height: 100%;
   display: block;
@@ -16,6 +16,7 @@
 .very-small {
   font-size: 12px;
 }
+
 
 /* ------------------ NavBar --------------------- */
 
@@ -36,17 +37,16 @@
   text-align:center;
 }
 
-
-/* ----------------- Choose game -------------- */
-
 .main-h1 {
-  margin-top: 10%;
-  margin-bottom: 50%;
+  margin-top: 20%;
+}
+
+.space {
+  margin: 50%;
 }
 
 
 /* ----------------- Cool box to show games -------------- */
-
 .cool-box {
   background: #fff;
   border-radius: 2px;
@@ -59,8 +59,9 @@
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.cool-box h3 {
+.cool-box {
   text-align: center;
+  font-size: 20px;
 }
 
 .cool-box:hover {
@@ -70,7 +71,7 @@
 
 /* ------------------ Base --------------------- */
 html {
-  background-color: #EDEDEE;
+  background-color: #ccccec;
 }
 
 .hidden-text {
@@ -78,9 +79,12 @@ html {
 	position: absolute
 }
 
+p {
+  font-size: 15px;
+}
 
 body {
-  font-family: Monospace, serif !important;
+  font-family: monospace;
 }
 
 body.no-scroll {
@@ -90,7 +94,28 @@ body.no-scroll {
 }
 
 h1 {
-  color: #592765;
+  color: black;
+}
+
+#choose_game h1 a {
+  font-size: 20px;
+}
+
+/* ------------------ Button ------------------- */
+.beaut-button {
+  border: 1px solid grey;
+  box-shadow: 1px 5px 2px grey;
+  position: relative;
+  top: 0px;
+  transition: all ease 0.3s;
+  width: 40%;
+  height: 30%;
+  margin-bottom: 2%;
+}
+
+.beaut-button:active {
+  box-shadow: 1px 3px 2px black;
+  top: 3px;
 }
 
 /* ------------------ Not mine ----------------- */
@@ -161,8 +186,10 @@ img {
   font-size: 12px;
   padding: 16px 22px;
 }
+
 .body-container {
   margin: 10%;
+  margin-top: 0%;
 }
 
 .white-box {

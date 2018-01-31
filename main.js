@@ -33,11 +33,11 @@ class Main {
     this.lastTime = new Date();
 
     this.code = {
-      0: {"key": "left", "code": 37, "symbol": "&larr;"},
-      1: {"key": "right", "code": 39, "symbol": "&rarr;"},
-      2: {"key": "up", "code": 38, "symbol": "&uarr;"},
-      3: {"key": "down", "code": 40, "symbol": "&darr;"},
-      4: {"key": "None", "code": null}
+      0: {"key": "left", "code": 37, "symbol": "←"},
+      1: {"key": "right", "code": 39, "symbol": "→"},
+      2: {"key": "up", "code": 38, "symbol": "↑"},
+      3: {"key": "down", "code": 40, "symbol": "↓"},
+      4: {"key": "Do nothing", "code": "", "symbol": ""}
     }
 
     // Initiate deeplearn.js math and knn classifier objects
@@ -52,19 +52,23 @@ class Main {
     const divVideo = document.getElementById('video');
     divVideo.appendChild(this.video);
 
-
     const menu = document.getElementById('menu');
-
     // Create training buttons and info texts
     for(let i in this.code){
       const div = document.createElement('div');
       menu.appendChild(div);
-      div.style.marginBottom = '10px';
+      div.className += 'row';
+      div.style.marginTop = '10%';
+      div.style.marginBottom = '10%';
+      div.style.textAlign = 'center';
 
       // Create training button
       const button = document.createElement('button');
+      button.className += 'beaut-button';
       button.innerText = this.code[i]['symbol'] + ' ' + this.code[i]['key'];
       div.appendChild(button);
+
+      div.appendChild(document.createElement('br'));
 
       // Listen for mouse events when clicking the button
       button.addEventListener('mousedown', () => this.training = i);
@@ -87,7 +91,11 @@ class Main {
     div.appendChild(button);
 
     // Listen for mouse events when clicking the button
-    button.addEventListener('mouseup', () => window.dispatchEvent(new CustomEvent('play' + window.choosedGame, { detail: 1 })));
+    var play_game = function() {
+      window.dispatchEvent(new CustomEvent('play' + window.choosedGame, { detail: 1 }));
+      window.location.hash = '#screen';
+    }
+    button.addEventListener('mouseup', play_game);
 
     // Setup webcam
     navigator.mediaDevices.getUserMedia({video: true, audio: false})

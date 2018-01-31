@@ -1,21 +1,27 @@
 var data_json = {
   "games": [{
       "name": "snake",
-       "controls": {},
-       "instructions": "",
-       "img": "imgs/snake_screenshot.png"
+       "img": "imgs/snake_screenshot.png",
+       "url": "https://github.com/maryrosecook/retro-games",
+       "author": "maryrosecook"
      },
      {
        "name": "asteroids",
-        "controls": {},
-        "instructions": "",
-        "img": "imgs/asteroids_screenshot.png"
+        "img": "imgs/asteroids_screenshot.png",
+        "url": "https://github.com/maryrosecook/retro-games",
+        "author": "maryrosecook"
       },
       {
-        "name": "Tetris",
-         "controls": {},
-         "instructions": "",
-         "img": "imgs/tetris.png"
-       }
+        "name": "tetris",
+         "img": "imgs/tetris.png",
+         "url": "https://github.com/ttencate/tis",
+         "author": "ttencate"
+       },
+       {
+         "name": "racer",
+          "img": "imgs/racer.png",
+          "url": "https://github.com/onaluf/RacerJS",
+          "author": "onaluf"
+        }
   ]
 };

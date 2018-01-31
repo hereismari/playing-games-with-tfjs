@@ -2,35 +2,14 @@
 
 window.addEventListener('load', function() {
 
-  var count=3;
-
-  var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
-
-  function timer()
-  {
-    count=count-1;
-    if (count < 0)
-    {
-       clearInterval(counter);
-       var element = document.getElementById("timer");
-       element.parentNode.removeChild(element);
-       return;
-    }
-
-    //Do code for showing the number of seconds here
-
-    document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
-  }
-
   window.choosedGame = -1;
   var setGame = function(i) {
     window.choosedGame = data_json.games[i].name;
-    console.log(choosedGame);
     window.location.href = '#play_game';
   };
 
 
-  /* Add buttos to choose a game */
+  /* Add buttons to choose a game */
   const div = document.getElementById('choose_game');
   console.log(data_json.games);
   for(let i = 0; i < data_json.games.length; i++) {
@@ -39,11 +18,13 @@ window.addEventListener('load', function() {
     buttonDiv.addEventListener('mouseup', () => setGame(i));
     div.appendChild(buttonDiv);
 
-    // Create training button
-    const h3 = document.createElement('h3')
-    h3.innerText = data_json.games[i].name;
-    buttonDiv.appendChild(h3);
+    // Add name
+    const a = document.createElement('a')
+    a.innerText = data_json.games[i].name + ' by ' + data_json.games[i].author;
+    a.setAttribute('href', data_json.games[i].url);
+    buttonDiv.appendChild(a);
 
+    // Add image
     var x = document.createElement("img");
     x.setAttribute("src", data_json.games[i].img);
     x.setAttribute("width", "200");
