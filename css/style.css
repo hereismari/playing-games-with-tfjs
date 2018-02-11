@@ -101,6 +101,11 @@ h1 {
   font-size: 20px;
 }
 
+.padding {
+  padding-top: 2%;
+  padding-bottom: 20%;
+}
+
 /* ------------------ Button ------------------- */
 .beaut-button {
   border: 1px solid grey;
@@ -118,7 +123,7 @@ h1 {
   top: 3px;
 }
 
-/* ------------------ Not mine ----------------- */
+/* ------------------ Originally from: https://github.com/ITPNYU/ml5/ ----------------- */
 /* Some modifications were made to make it more compatible */
 
 #output {

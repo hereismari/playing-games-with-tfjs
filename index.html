@@ -15,7 +15,6 @@
     <script src="js/games/snake.js"></script>
     <script src="js/games/asteroids.js"></script>
     <script src="js/games/tis.js"></script>
-    <script src="js/games/racer.js"></script>
 
     <!-- auxiliar files for dealing with the games -->
     <script type="text/javascript" src="games.json"></script>
@@ -40,36 +39,60 @@
   <div class="body-container row col-8">
     <div class="navbar">
       <a href="#choose_game">Play</a>
-      <a href="#news">About</a>
-      <a href="#contact">Source</a>
+      <a href="https://github.com/mari-linhares/teachable-machine-games">Source</a>
     </div>
 
     <div>
-      <h1 class="center-text">Teachable games</h1>
+      <h1 class="center-text">Teachable Machine for Games</h1>
       <p>This a simplified version of
         <a href="https://teachablemachine.withgoogle.com">Teachable Machines</a>
         modified so you can play games in a different way!
-        This code is open source and can be accessed
-        <a href="todo">here</a>.
+        This code can be accessed <a href="https://github.com/mari-linhares/teachable-machine-games">here</a>.
       </p>
 
-      <h2> Thank you notes: </h2>
-      <p>
-        The games presented here were not implemented by me, the authors and
-        the original source code for each game can be accessed in my github.
-        You can also click on the names of the games to go to the original source code.
+      </br>
+      <h4> Notes: </h4>
+      <span>
+        The games presented here were not implemented by me, you can finde
+        the authors and the original source code <a href="todo">here</a>.
         Thank you to all of the authors for the great implementations!
-      </p>
+      </span>
 
-      <!-- the buttons will be inserted here by boilerploat.js -->
+      </br>
+      </br>
+      </br>
+      <span>
+        This demo is possible thanks to the boilerplate code available
+        at the <a href="https://github.com/googlecreativelab/teachable-machine-boilerplate">
+                  google creative lab github</a>
+      </span>
+
+    </br>
+    </br>
+    </br>
+    <span>
+      There are a lot of possible improvements in this demo
+      (I'm no web dev as you may notice), contributions are more than welcome!
+    </span>
+
+      <!-- the buttons will be inserted here by boilerplate.js -->
       <div id="choose_game" class='main-h1 row'>
-        <h1> Choose a game <a href="#">or add yours...</a> </h1>
+        <h1> Choose a game
+          <a href="https://github.com/mari-linhares/teachable-machine-games#adding-your-own-game">or add yours...</a> </h1>
       </div>
 
-      <!--  -->
+      <!-- Play game, the button will be inserted by boilerplate.js -->
       <div id='play_game' class='main-h1'>
         <h1> Play game </h1>
+      </br>
+      </div>
+
+      <div class='padding'>
         <canvas id="screen" width="510" height="510" style="position: absolute;"></canvas>
+      </div>
+
+      <div class='main-h1'>
+        <span><span/>
       </div>
 
     </div>

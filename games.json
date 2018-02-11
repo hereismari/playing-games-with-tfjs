@@ -16,12 +16,6 @@ var data_json = {
          "img": "imgs/tetris.png",
          "url": "https://github.com/ttencate/tis",
          "author": "ttencate"
-       },
-       {
-         "name": "racer",
-          "img": "imgs/racer.png",
-          "url": "https://github.com/onaluf/RacerJS",
-          "author": "onaluf"
-        }
+       }
   ]
 };

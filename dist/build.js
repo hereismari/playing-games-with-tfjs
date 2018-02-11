@@ -44,11 +44,11 @@ var Main = function () {
     this.lastTime = new Date();
 
     this.code = {
-      0: { "key": "left", "code": 37, "symbol": "&larr;" },
-      1: { "key": "right", "code": 39, "symbol": "&rarr;" },
-      2: { "key": "up", "code": 38, "symbol": "&uarr;" },
-      3: { "key": "down", "code": 40, "symbol": "&darr;" },
-      4: { "key": "None", "code": null }
+      0: { "key": "left", "code": 37, "symbol": "←" },
+      1: { "key": "right", "code": 39, "symbol": "→" },
+      2: { "key": "up", "code": 38, "symbol": "↑" },
+      3: { "key": "down", "code": 40, "symbol": "↓" },
+      4: { "key": "Do nothing", "code": "", "symbol": "" }
 
       // Initiate deeplearn.js math and knn classifier objects
     };this.knn = new _deeplearnKnnImageClassifier.KNNImageClassifier(NUM_CLASSES, TOPK, _deeplearn.ENV.math);
@@ -63,18 +63,23 @@ var Main = function () {
     divVideo.appendChild(this.video);
 
     var menu = document.getElementById('menu');
-
     // Create training buttons and info texts
 
     var _loop = function _loop(i) {
       var div = document.createElement('div');
       menu.appendChild(div);
-      div.style.marginBottom = '10px';
+      div.className += 'row';
+      div.style.marginTop = '10%';
+      div.style.marginBottom = '10%';
+      div.style.textAlign = 'center';
 
       // Create training button
       var button = document.createElement('button');
+      button.className += 'beaut-button';
       button.innerText = _this.code[i]['symbol'] + ' ' + _this.code[i]['key'];
       div.appendChild(button);
+
+      div.appendChild(document.createElement('br'));
 
       // Listen for mouse events when clicking the button
       button.addEventListener('mousedown', function () {
@@ -105,9 +110,11 @@ var Main = function () {
     div.appendChild(button);
 
     // Listen for mouse events when clicking the button
-    button.addEventListener('mouseup', function () {
-      return window.dispatchEvent(new CustomEvent('play' + window.choosedGame, { detail: 1 }));
-    });
+    var play_game = function play_game() {
+      window.dispatchEvent(new CustomEvent('play' + window.choosedGame, { detail: 1 }));
+      window.location.hash = '#screen';
+    };
+    button.addEventListener('mouseup', play_game);
 
     // Setup webcam
     navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(function (stream) {

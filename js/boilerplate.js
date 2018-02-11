@@ -8,10 +8,8 @@ window.addEventListener('load', function() {
     window.location.href = '#play_game';
   };
 
-
   /* Add buttons to choose a game */
   const div = document.getElementById('choose_game');
-  console.log(data_json.games);
   for(let i = 0; i < data_json.games.length; i++) {
     const buttonDiv = document.createElement('div');
     buttonDiv.setAttribute('class', 'cool-box input-container white-box col-1')
@@ -30,10 +28,21 @@ window.addEventListener('load', function() {
     x.setAttribute("width", "200");
     x.setAttribute("height", "200");
     buttonDiv.appendChild(x);
-
-    console.log(data_json.games[i].name);
   }
 
+  /* Adds play button */
+  const div_game = document.getElementById('play_game');
+
+  const button = document.createElement('button')
+  button.innerText = "Play";
+  div_game.appendChild(button);
+
+  // Listen for mouse events when clicking the button
+  var play_game = function() {
+    window.dispatchEvent(new CustomEvent('play' + window.choosedGame, { detail: 1 }));
+    window.location.hash = '#screen';
+  }
+  button.addEventListener('mouseup', play_game);
 
 });
 

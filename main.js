@@ -85,18 +85,6 @@ class Main {
     menu.appendChild(div);
     div.style.marginBottom = '10px';
 
-    // Create training button
-    const button = document.createElement('button')
-    button.innerText = "Play";
-    div.appendChild(button);
-
-    // Listen for mouse events when clicking the button
-    var play_game = function() {
-      window.dispatchEvent(new CustomEvent('play' + window.choosedGame, { detail: 1 }));
-      window.location.hash = '#screen';
-    }
-    button.addEventListener('mouseup', play_game);
-
     // Setup webcam
     navigator.mediaDevices.getUserMedia({video: true, audio: false})
     .then((stream) => {
@@ -126,8 +114,8 @@ class Main {
     cancelAnimationFrame(this.timer);
   }
 
-  animate(){
-    if(this.videoPlaying){
+  animate() {
+    if(this.videoPlaying) {
       // Get image data from video element
       const image = Array3D.fromPixels(this.video);
 
@@ -141,7 +129,6 @@ class Main {
       const exampleCount = this.knn.getClassExampleCount();
       if(new Date().getTime() - this.lastTime.getTime() >= 400 &&
          Math.max(...exampleCount) > 0) {
-         console.log(new Date().getTime() - this.lastTime.getTime());
         this.lastTime = new Date();
         this.knn.predictClass(image)
         .then((res)=>{
@@ -159,29 +146,23 @@ class Main {
             }
           }
 
-          // Firing a native keyboard event is way harder than it should be,
-          // but we can fake it.
-          // http://stackoverflow.com/questions/961532/firing-a-keyboard-event-in-javascript
-
-          console.log(res.classIndex);
-          if(res.classIndex != 4) {
-            var e = document.createEvent('Event');
-
-            e.initEvent('keydown', true, true);
-            e.keyCode = this.code[res.classIndex]['code'];
-            document.dispatchEvent(e);
-
-            var x = function(code) {
-              var e2 = document.createEvent('Event');
-              e2.initEvent('keyup', true, true);
-              e2.keyCode = code[res.classIndex]['code'];
-              document.dispatchEvent(e2);
-            }
-
-            setTimeout(x, 100, this.code);
+          var keyUpFunction = function(code) {
+            var e2 = document.createEvent('Event');
+            e2.initEvent('keyup', true, true);
+            e2.keyCode = code[res.classIndex]['code'];
+            document.dispatchEvent(e2);
           }
 
-        })
+          if(res.classIndex != 4) {
+              var e = document.createEvent('Event');
+
+              e.initEvent('keydown', true, true);
+              e.keyCode = this.code[res.classIndex]['code'];
+              document.dispatchEvent(e);
+
+              setTimeout(keyUpFunction, 100, this.code);
+            }
+          })
         // Dispose image when done
         .then(()=> image.dispose())
       } else {
