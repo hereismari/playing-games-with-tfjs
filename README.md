@@ -1,6 +1,14 @@
 # Teachable Machine for Games
 
-This is based on the code made available by the google creative lab that can be acessed [here](https://github.com/googlecreativelab/teachable-machine-boilerplate).
+This is a modified version of the code made available by the google creative lab that can be acessed [here](https://github.com/googlecreativelab/teachable-machine-boilerplate).
+
+The original games sources can be acessed at:
+
+* [Snake](https://github.com/maryrosecook/retro-games) by maryroseek. 
+* [Asteroids](https://github.com/maryrosecook/retro-games) by maryrosecook.
+* [Tetris](https://github.com/ttencate/tis) by ttencate.
+
+Thanks to all!
 
 ## About it
 
