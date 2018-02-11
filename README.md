@@ -38,7 +38,7 @@ This information is just used only for display. But, **when the user press play 
 
 And that's it :smile:!
 
-Oh, also I'm considering that your game uses only the arrow keys, if this is not true you can just add more buttons at [main.js](main.js)
+Oh, also I'm considering that your game uses only the arrow keys, if this is not true you can just add more buttons at [main.js](https://github.com/mari-linhares/teachable-machine-games/blob/ea5e00e78c985f44f138ec9d4561c2a1577259af/main.js#L35) and change the number of trainable classes (https://github.com/mari-linhares/teachable-machine-games/blob/ea5e00e78c985f44f138ec9d4561c2a1577259af/main.js#L19)
 
 
 ## Quick Reference
