@@ -38,7 +38,7 @@ This information is just used only for display. But, **when the user press play 
 
 And that's it :smile:!
 
-Oh, also I'm considering that your game only uses the arrow keys to be played, if this is not true you can just add more buttons at [main.js](main.js)
+Oh, also I'm considering that your game uses only the arrow keys, if this is not true you can just add more buttons at [main.js](main.js)
 
 
 ## Quick Reference
