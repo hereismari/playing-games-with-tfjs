@@ -8,7 +8,12 @@ The original games sources can be acessed at:
 * [Asteroids](https://github.com/maryrosecook/retro-games) by maryrosecook.
 * [Tetris](https://github.com/ttencate/tis) by ttencate.
 
+
 Thanks to all!
+
+<div style="text-align:center"><img src="demo/demo_tetris1.gif"/></div>
+
+**This project was developed in my free time and there's a lot of possible improvements, feel free to contribute!**
 
 ## About it
 
