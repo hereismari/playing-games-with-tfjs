@@ -4,11 +4,11 @@ This is based on the code made available by the google creative lab that can be 
 
 ## About it
 
-This is a small and simple project that uses [deeplearn.js](https://deeplearnjs.org) to play a couple of games. [Here](#) you can learn how to add your own game.
+This is a small and simple project that uses [deeplearn.js](https://deeplearnjs.org) to play a couple of games. [Here](https://github.com/mari-linhares/teachable-machine-games/blob/master/README.md#adding-your-own-game) you can learn how to add your own game.
 
 ## Run it yourself!
 
-Currently I don't have a server running thisdemo, but you can run it locally.
+Currently I don't have a server running this demo, but you can run it locally.
 
 First install the javascript dependencies by running  
 ```
