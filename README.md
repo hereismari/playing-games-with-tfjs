@@ -47,7 +47,7 @@ Add your game info at games.json, for instance:
      }
 ```
 
-This information is used only for display. But, **when the user press play an event named <name> (in this case 'snake') will be dispatched**, and your game should start playing when this event happens.
+This information is used only for display. But, **when the user press play an event named *name* (in this case 'snake') will be dispatched**, and your game should start playing when this event happens.
 
 And that's it :smile:!
 
