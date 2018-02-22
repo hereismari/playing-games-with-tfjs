@@ -44,10 +44,10 @@ Add your game info at games.json, for instance:
        "img": "imgs/snake_screenshot.png",
        "url": "https://github.com/maryrosecook/retro-games",
        "author": "maryrosecook"
-     }
+}
 ```
 
-This information is used only for display. But, **when the user press play an event named *name* (in this case 'snake') will be dispatched**, and your game should start playing when this event happens.
+This information is used only for display. But, **when the user press play an event named *name* (in this case 'snake') will be dispatched**, and your game should start running when this event happens.
 
 And that's it :smile:!
 
