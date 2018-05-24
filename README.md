@@ -13,7 +13,7 @@ Thanks to all!
 
 <div style="text-align:center"><img src="demo/demo_tetris1.gif"/></div>
 
-**This project was developed in my free time and there's a lot of possible improvements, feel free to contribute!**
+**This project was developed during my free time and there's a lot of possible improvements, feel free to contribute!**
 
 ## About it
 
