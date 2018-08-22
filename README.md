@@ -2,6 +2,8 @@
 
 This is a modified version of the code made available by the google creative lab that can be acessed [here](https://github.com/googlecreativelab/teachable-machine-boilerplate).
 
+[Blog post available on Medium](https://medium.com/@mariannelinharesm/playing-a-game-using-just-your-camera-with-deeplearnjs-ca156008f537).
+
 The original games sources can be acessed at:
 
 * [Snake](https://github.com/maryrosecook/retro-games) by maryroseek. 
