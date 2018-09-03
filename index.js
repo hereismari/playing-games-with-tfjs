@@ -83,8 +83,8 @@ async function app() {
         }
       }
 
-      // Avoid really movements in the game
-      await sleep(200);
+      // Avoid really fast movements in the game
+      await sleep(500);
   
       await tf.nextFrame();
     }
