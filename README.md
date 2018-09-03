@@ -1,7 +1,6 @@
 # Playing games with TensorFlow JS
 
-Demo: [https://mari-linhares.github.io/playing-games-with-tfjs/](https://mari-linhares.github.io/playing-games-with-tfjs/)
-It may take a while to load since it needs to load the models.
+Demo: [https://mari-linhares.github.io/playing-games-with-tfjs/](https://mari-linhares.github.io/playing-games-with-tfjs/). The page may take a while to load since it needs to load the models.
 
 ----
 
