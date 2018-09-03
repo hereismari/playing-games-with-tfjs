@@ -1,5 +1,4 @@
 /* ------------------ Menu --------------------- */
-
 #menu {
   background-color: #ccccec;
   position: fixed;
@@ -17,9 +16,14 @@
   font-size: 12px;
 }
 
+.div-button {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  text-align: center;
+}
+
 
 /* ------------------ NavBar --------------------- */
-
 .navbar {
   overflow: hidden;
   top: 0;
@@ -379,3 +383,4 @@ img {
   [class*="col-"] {
       width: 100%;
   }
+}
