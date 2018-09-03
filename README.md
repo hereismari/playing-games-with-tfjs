@@ -1,13 +1,16 @@
 # Playing games with TensorFlow JS
 
-[https://github.com/mari-linhares/playing-games-with-tfjs](https://github.com/mari-linhares/playing-games-with-tfjs)
+Demo: [https://mari-linhares.github.io/playing-games-with-tfjs/](https://mari-linhares.github.io/playing-games-with-tfjs/)
+It may take a while to load since it needs to load the models.
+
+----
 
 This code was originally a modified version of the code made available by the google creative lab that can be acessed [here](https://github.com/googlecreativelab/teachable-machine-boilerplate) based on DeepLearn.js.
 
 
 [Medium: Playing a game using just your camera with Deeplearn.js](https://medium.com/@mariannelinharesm/playing-a-game-using-just-your-camera-with-deeplearnjs-ca156008f537).
 
-The code was updated and now is implemented in TensorFlow.js!
+The code was updated and now is implemented in TensorFlow.js.
 
 <div style="text-align:center"><img src="demo/demo_tetris1.gif"/></div>
 
