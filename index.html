@@ -14,6 +14,7 @@
 
     <!-- auxiliar files for dealing with the games -->
     <script type="text/javascript" src="games.json"></script>
+    <script src="js/demo_utils.js"></script>
     <script src="js/boilerplate.js"></script>
 
     <!-- style -->
@@ -33,8 +34,8 @@
     <!-- Load index.js after the content of the page -->
     <script src="index.js"></script>
     <div id="menu" class="col-2">
-        <div id="video" class="center-container">
-            <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+        <div class="center-container">
+            <canvas id="output" width="224" height="224" />
         </div>
         <span class='very-small'>Everything runs locally so there's no server
                                 consuming this data.</span>
@@ -74,11 +75,11 @@
             <br>
             <span id='text-nothing'></span>
         </div>
-
-        <div class='row' id='console'>
-
+    
+        <div id="video">
+            <video autoplay playsinline muted id="webcam" width="224" height="224" style="visibility: hidden"></video>
         </div>
-
+    
     </div>
 
     <div class="body-container row col-8">

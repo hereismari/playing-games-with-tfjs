@@ -131,8 +131,8 @@ h1 {
 /* Some modifications were made to make it more compatible */
 
 #output {
-  height: 300px;
-  max-width: 300px;
+  height: 224px;
+  max-width: 224px;
   background: lightgray;
   margin-bottom: 15px;
 }
@@ -147,6 +147,7 @@ h1 {
 .center-container {
   display: flex;
   justify-content: center;
+  margin-top: 10%;
 }
 .gif-container {
   display: flex;
